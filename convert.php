@@ -12,7 +12,7 @@ function convertTxt($filename){
 
 		$pdf	=  new PdfToText () ;
 		// Modify any property here before loading the file ; for example :
-		$pdf -> BlockSeparator = "***" ;
+		$pdf -> BlockSeparator = "@" ;
 
 		$pdf -> Load ($filename) ;
 		
@@ -52,7 +52,7 @@ function viewData($filename){
 	echo "Segue o link para download do arquivo";
 	echo "<br>";
 	echo "<br>";
-	echo "<a href='/pdf/$filename.csv'>http://".$_SERVER['SERVER_NAME']."/".$filename.".csv</a>";
+	echo "<a href='/$filename.csv'>http://".$_SERVER['SERVER_NAME']."/".$filename.".csv</a>";
 	echo "<br>";
 	echo "<br>";
 	echo "Segue o link para visualizar no navegador";
