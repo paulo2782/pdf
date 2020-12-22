@@ -49,18 +49,18 @@ function viewData($filename){
 	fclose($fp);
 
 
-	echo "Segue o link para download do arquivo";
-	echo "<br>";
-	echo "<br>";
-	echo "<a href='/$filename.csv'>http://".$_SERVER['SERVER_NAME']."/".$filename.".csv</a>";
-	echo "<br>";
-	echo "<br>";
-	echo "Segue o link para visualizar no navegador";
+	// echo "Segue o link para download do arquivo";
+	// echo "<br>";
+	// echo "<br>";
+	// echo "<a href='/$filename.csv'>http://".$_SERVER['SERVER_NAME']."/".$filename.".csv</a>";
+	// echo "<br>";
+	// echo "<br>";
+	echo "Segue o link para download";
 	echo "<br>";
 	echo "<br>";
 	$i = strlen($filename);
 	$filename = substr($filename,4,$i);
 
-	echo "<a href='table.php?file=$filename.csv'> VISUALIZAR NO NAVEGADOR";
+	echo "<a href='table.php?file=$filename.csv'> DOWNLOAD";
 
 }
