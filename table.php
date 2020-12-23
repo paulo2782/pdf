@@ -49,9 +49,8 @@
 		if($iVetor == 4){
 			$str = explode("@", $data[$i][0]);
 			$str = $str[3]."@".$str[2]."@".$str[1]."@".$str[0];
-
+			
 			array_push($descricao, $str);
-
 
 		}
 
@@ -89,26 +88,38 @@
 $iDescricao = count($descricao);
 
 echo
-"<table class='table table-responsive' id='tab'>
+"<table class='table table-responsive' id='tab' width='70%'>
 	<tbody> 
+	<th>Código</th>
+	<th>Descrição do Serviço</th>
+	<th>Unidade</th>
+	<th>R$</th>
+
 ";
 
 $textoAll = [];
 for($i = 0 ; $i <= $iDescricao-1 ; $i++){
 	$aDescricao = explode("@",$descricao[$i].nl2br(''));
+
+	if($aDescricao[0]  <> 'Código' && 
+	    $aDescricao[1] <> 'Descrição do Serviço' &&
+	 	$aDescricao[2] <> 'Unidade' &&
+		$aDescricao[3] <> '(R$)')
+	{
+
 echo
 	"
-		<tr scope='row' class='row'.".$i.">
-			<td class='col1'>$aDescricao[0]</td>
-			<td class='col2'>$aDescricao[1]</td>
-			<td class='col3'>$aDescricao[2]</td>
-			<td class='col4'>$aDescricao[3]</td>
+		<tr scope='row' class='$i'>
+			<td class=''>$aDescricao[0]</td>
+			<td class=''>$aDescricao[1]</td>
+			<td class=''>$aDescricao[2]</td>
+			<td class=''>$aDescricao[3]</td>
 		</tr>"; 
 	array_push($textoAll, $aDescricao[0].','.$aDescricao[1].','.$aDescricao[2].','.$aDescricao[3]);
 	} 
 
 "</tbody></table>";
-
+	}
 
 ?>
 
